@@ -1,8 +1,6 @@
-const functions = require('firebase-functions');
+const { authOnDelete, authOnCreate } = require('./services/userTriggers')
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+module.exports = {
+  authOnDelete,
+  authOnCreate
+}
