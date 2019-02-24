@@ -7,8 +7,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const functions = require('firebase-functions');
-const { db } = require('../../lib/firebase');
+const firebase_1 = require("../../lib/firebase");
 /**
  * Deletes a document with ID -> uid in the `users` collection.
  *
@@ -17,7 +18,7 @@ const { db } = require('../../lib/firebase');
  */
 const deleteProfile = (userRecord, context) => __awaiter(this, void 0, void 0, function* () {
     try {
-        yield db.collection('users').doc(userRecord.uid).delete();
+        yield firebase_1.db.collection('users').doc(userRecord.uid).delete();
         console.info('User deleted: ', userRecord);
     }
     catch (err) {
@@ -32,7 +33,7 @@ const deleteProfile = (userRecord, context) => __awaiter(this, void 0, void 0, f
  */
 const createProfile = (userRecord, context) => __awaiter(this, void 0, void 0, function* () {
     try {
-        yield db.collection('users').doc(userRecord.uid).set({
+        yield firebase_1.db.collection('users').doc(userRecord.uid).set({
             email: userRecord.email
         });
         console.info('User created: ', userRecord);

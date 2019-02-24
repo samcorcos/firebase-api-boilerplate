@@ -1,5 +1,6 @@
 const functions = require('firebase-functions')
-const { db } = require('../../lib/firebase')
+
+import { db } from '../../lib/firebase'
 
 interface UserRecord {
   email: string;
@@ -54,3 +55,4 @@ module.exports = {
   authOnDelete: functions.auth.user().onDelete(deleteProfile),
   authOnCreate: functions.auth.user().onCreate(createProfile)
 }
+
