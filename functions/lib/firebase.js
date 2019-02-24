@@ -1,4 +1,6 @@
 const admin = require('firebase-admin')
+const path = require('path')
+const Firestore = require('firestore-rest')
 
 // TODO change out the service account json file here
 // if you don't have this file, get it from admin or generate a new one from
@@ -10,7 +12,12 @@ admin.initializeApp({
   // TODO get the databaseURL from the web credentials and add it here
   databaseURL: 'https://next-firebase-boilerplate.firebaseio.com'
 })
-const db = admin.firestore()
+
+process.env.GOOGLE_APPLICATION_CREDENTIALS = path.join(__dirname, '../path/to/credentials.json')
+process.env.GCLOUD_PROJECT = 'my-app-name'
+
+// const db = admin.firestore()
+const db = new Firestore()
 
 module.exports = {
   admin,

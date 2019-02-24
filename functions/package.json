@@ -2,6 +2,8 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
+    "dev": "npm run serve",
+    "tsc": "tsc --watch",
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
@@ -10,12 +12,14 @@
   },
   "dependencies": {
     "firebase-admin": "~6.0.0",
-    "firebase-functions": "^2.1.0"
+    "firebase-functions": "^2.1.0",
+    "firestore-rest": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^11.9.5",
+    "typescript": "^3.3.3333"
   },
   "private": true,
-  "standard": {
-    "parser": "babel-eslint"
-  },
   "engines": {
     "node": "8"
   }
