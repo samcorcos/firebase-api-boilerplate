@@ -12,6 +12,8 @@ Go to `console.firebase.com` and create a new project, if you have not done so a
 
 Change `/functions/lib/firebase.js` to inclue the path to the new credentials file.
 
+Remove git: `rm -rf .git`
+
 ## Deployment 
 
 `firebase deploy` - requires CLI
