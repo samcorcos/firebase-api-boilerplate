@@ -1,5 +1,5 @@
 const functions = require('firebase-functions')
-const { db } = require('../../lib/firebase')
+const { dbRest } = require('../../lib/firebase')
 
 /**
  * Deletes a document with ID -> uid in the `users` collection.
@@ -9,7 +9,7 @@ const { db } = require('../../lib/firebase')
  */
 const deleteProfile = async (userRecord, context) => {
   try {
-    await db.collection('users').doc(userRecord.uid).delete()
+    await dbRest.collection('users').doc(userRecord.uid).delete()
     console.info('User deleted: ', userRecord)
   } catch (err) {
     console.error(err)
@@ -24,7 +24,7 @@ const deleteProfile = async (userRecord, context) => {
  */
 const createProfile = async (userRecord, context) => {
   try {
-    await db.collection('users').doc(userRecord.uid).set({
+    await dbRest.collection('users').doc(userRecord.uid).set({
       email: userRecord.email
     })
     console.info('User created: ', userRecord)

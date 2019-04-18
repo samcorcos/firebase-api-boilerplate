@@ -13,13 +13,14 @@ admin.initializeApp({
   databaseURL: 'https://next-firebase-boilerplate.firebaseio.com'
 })
 
-process.env.GOOGLE_APPLICATION_CREDENTIALS = path.join(__dirname, '../path/to/credentials.json')
-process.env.GCLOUD_PROJECT = 'my-app-name'
+process.env.GOOGLE_APPLICATION_CREDENTIALS = path.join(__dirname, '../credentials/next-firebase-boilerplate-firebase-adminsdk-qk0l5-1137551b4b.json')
+process.env.GCLOUD_PROJECT = 'next-firebase-boilerplate'
 
-// const db = admin.firestore()
-const db = new Firestore()
+const db = admin.firestore()
+const dbRest = new Firestore()
 
 export {
   db,
+  dbRest,
   admin
 }
