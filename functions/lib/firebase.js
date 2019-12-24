@@ -19,7 +19,7 @@ process.env.GCLOUD_PROJECT = 'next-firebase-boilerplate'
 const db = admin.firestore()
 const dbRest = new Firestore()
 
-export {
+module.exports = {
   db,
   dbRest,
   admin
